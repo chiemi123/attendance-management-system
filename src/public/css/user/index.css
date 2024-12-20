@@ -1,0 +1,94 @@
+.header__utilities {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: flex-end; /* ナビゲーションを右揃え */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 40px; /* 右側に余白を追加 */
+    gap: 20px; /* ナビゲーション項目間の間隔 */
+}
+
+.header__nav__item {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* リンク間の間隔 */
+}
+
+.header__nav__link {
+    text-decoration: none;
+    color: #333; /* リンクの文字色 */
+    font-size: 16px;
+    padding: 8px 12px; /* クリックしやすいように余白を追加 */
+    transition: color 0.3s;
+}
+
+.header__nav__button {
+    border: none;
+    background: transparent;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container {
+    height: 78vh; /* ビューポートの高さの80%を使用 */
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    justify-content: center; /* 縦方向の中央に配置 */
+    align-items: center; /* 横方向の中央に配置 */
+    text-align: center; /* テキストを中央揃え */
+}
+
+.container h2 {
+    padding-bottom: 30px;
+}
+
+.user__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: justify;
+    text-indent: 3em;
+}
+
+.user__table th,
+.user__table td {
+    border: none; /* すべての境界線を削除 */
+    padding: 20px 5px; /* セル内の余白を指定 */
+}
+
+.user__table th {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; /* ヘッダーの下に横線を追加 */
+}
+
+.user__table td {
+    border-bottom: 1px solid #ccc; /* データ行の下に横線を追加 */
+    white-space: nowrap; /* テキストの折り返しを防ぐ */
+    overflow: hidden; /* 長すぎるテキストを隠す */
+    text-overflow: ellipsis; /* 省略記号を表示（オプション） */
+}
+
+.user__table tr:last-child td {
+    border-bottom: none; /* 最終行の下には線を表示しない */
+    padding-bottom: 20px;
+}
+
+.user_attendance_btn {
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 25px;
+}
+
+.d__flex__justify__content__center {
+    padding-top: 50px;
+}

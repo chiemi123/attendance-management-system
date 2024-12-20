@@ -1,0 +1,60 @@
+.register__content {
+    text-align: center;
+    width: 400px;
+}
+
+h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+.form__group__content {
+    margin-bottom: 16px;
+}
+
+.form__input__text input {
+    padding: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+
+    appearance: none;
+}
+
+.form__group {
+    margin-bottom: 16px;
+}
+
+.form__button {
+    display: flex;
+    justify-content: center; /* ボタンを中央に配置 */
+    margin-top: 20px; /* 上部に少し余白を追加 */
+}
+
+.form__button__submit {
+    width: 100%; /* ボタンの幅を親コンテナに合わせる */
+    max-width: 400px; /* ボタンの最大幅を指定 */
+    padding: 12px; /* 上下の余白 */
+    font-size: 16px; /* テキストサイズ */
+    color: #ffffff; /* テキストの色を白に設定 */
+    background-color: #007bff; /* ボタンの背景色 */
+    border: none; /* 枠線を削除 */
+    border-radius: 4px; /* 角を丸める */
+    cursor: pointer; /* カーソルをポインタに */
+}
+
+.login__link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+p {
+    color: #6c757d;
+}
+
+.login__button__submit {
+    text-decoration: none;
+}

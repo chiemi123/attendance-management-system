@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('attendance:fix-unfinished')->dailyAt('00:01'); // 毎日0時1分に実行
     }
 
     /**

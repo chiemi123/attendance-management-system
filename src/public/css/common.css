@@ -1,0 +1,46 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background: #fff;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 10px 15px;
+    max-width: 1230px;
+}
+
+.header__logo {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 20px; /* 任意の余白 */
+    height: 95vh; /* ビューポートの高さの80%を使用 */
+}
+
+.pagination .page-item.disabled .page-link,
+.pagination .page-item .page-link[aria-label="Previous"],
+.pagination .page-item .page-link[aria-label="Next"] {
+    display: none;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px; /* フッターの高さを指定 */
+}
+
+.footer__inner {
+    align-items: center;
+}

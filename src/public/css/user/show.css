@@ -1,0 +1,121 @@
+.header__utilities {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: flex-end; /* ナビゲーションを右揃え */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 40px; /* 右側に余白を追加 */
+    gap: 20px; /* ナビゲーション項目間の間隔 */
+}
+
+.header__nav__item {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* リンク間の間隔 */
+}
+
+.header__nav__link {
+    text-decoration: none;
+    color: #333; /* リンクの文字色 */
+    font-size: 16px;
+    padding: 8px 12px; /* クリックしやすいように余白を追加 */
+    transition: color 0.3s;
+}
+
+.header__nav__button {
+    border: none;
+    background: transparent;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container {
+    height: 80vh; /* ビューポートの高さの80%を使用 */
+    /*display: flex;
+    flex: 1; /* 高さを自動調整 */
+    margin-top: 50px; /* ヘッダーの高さ分スペースを確保 */
+    margin-bottom: 50px; /* フッターの高さ分スペースを確保 */
+    overflow-y: auto; /* 縦スクロールを有効にする */
+    flex-direction: column; /* 縦に並べる */
+    justify-content: center; /* 縦方向の中央に配置 */
+    align-items: center; /* 横方向の中央に配置 */
+    text-align: center; /* テキストを中央揃え */
+}
+
+.month-picker-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 40px;
+}
+
+#monthPicker {
+    width: 100%; /* 必要に応じて調整 */
+    padding: 8px;
+    font-size: 16px;
+}
+
+.user__attendance__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: justify;
+    text-indent: 3em;
+}
+
+.user__attendance__table th,
+.user__attendance__table td {
+    border: none; /* すべての境界線を削除 */
+}
+
+.user__attendance__table th {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; /* ヘッダーの下に横線を追加 */
+}
+
+.clock-out-warning {
+    position: relative; /* ツールチップをこの要素に関連付け */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    color: red;
+    font-weight: bold;
+}
+
+.clock-out-warning::after {
+    all: unset; /* 親のスタイルをすべてリセット */
+    content: attr(data-tooltip); /* data-tooltipの内容を表示 */
+    text-indent: 1em;
+    position: absolute;
+    bottom: 100%; /* 要素の上に表示 */
+    left: 100%; /* 要素の右に表示 */
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* 背景色 */
+    color: #fff; /* テキスト色 */
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0; /* 初期状態では非表示 */
+    visibility: hidden; /* 非表示 */
+    transition: opacity 0.3s;
+    font-size: 12px;
+}
+
+.clock-out-warning:hover::after {
+    opacity: 1; /* カーソルが乗ったときに表示 */
+    visibility: visible;
+}
+
+.user__attendance__table td {
+    border-bottom: 1px solid #ccc; /* データ行の下に横線を追加 */
+}
+
+.user__attendance__table tr:last-child td {
+    border-bottom: none; /* 最終行の下には線を表示しない */
+    padding-bottom: 20px;
+}
