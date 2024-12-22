@@ -34,7 +34,7 @@
             </div>
             <div>
                 <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Remember Me</label>
+                <label for="remember">ログイン状態を保持する</label>
             </div>
         </div>
         <div class="form__button">
