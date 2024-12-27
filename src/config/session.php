@@ -31,9 +31,10 @@ return [
     |
     */
 
-    'lifetime' => env('SESSION_LIFETIME', 43200), // セッションの有効期限（分単位）。例: 30日間
+    'lifetime' => env('SESSION_LIFETIME', 120), // セッションの有効期限
+    'remember_lifetime' => 43200, // Remember Me の有効期限（30日間、分単位）
 
-    'expire_on_close' => false,
+    'expire_on_close' => false, // ブラウザを閉じてもセッション維持
 
     /*
     |--------------------------------------------------------------------------
@@ -168,7 +169,7 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => env('SESSION_SECURE_COOKIE', false), // HTTPS 環境のみでクッキーを送信するか
 
     /*
     |--------------------------------------------------------------------------

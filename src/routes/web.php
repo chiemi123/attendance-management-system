@@ -72,3 +72,4 @@ Route::get('/force-logout', function () {
     Auth::logout(); // ユーザーをログアウト
     return redirect('/login'); // ログイン画面にリダイレクト
 });
+
