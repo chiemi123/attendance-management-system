@@ -23,10 +23,6 @@ class AttendanceController extends Controller
                 ->whereDate('clock_in', Carbon::today()) // 今日の日付でフィルタ
                 ->first();
 
-            //if ($existingAttendance) {
-            //    return redirect()->back()->with('error', '既に出勤しています。');
-            //}
-
             Attendance::create([
                 'user_id' => $user->id,
                 'clock_in' => Carbon::now(),
@@ -49,8 +45,6 @@ class AttendanceController extends Controller
                 return redirect()->back()->with('success', '退勤が完了しました。');
             }
             $status = 3; // 勤務終了済み
-            // エラーメッセージを返す
-            //return redirect()->back()->with('error', '出勤記録が見つかりません。出勤してください。');
         }
 
         // 休憩開始ボタンが押された場合
@@ -70,7 +64,6 @@ class AttendanceController extends Controller
                 return redirect()->back()->with('success', '休憩開始しました。');
             }
             $status = 2; // ここで「休憩中」に設定する
-            //return redirect()->back()->with('error', '現在の状態では休憩を開始できません。');
         }
 
         // 休憩終了ボタンが押された場合
@@ -88,11 +81,7 @@ class AttendanceController extends Controller
                     // 成功メッセージを返す
                     return redirect()->back()->with('success', '休憩終了しました。');
                 }
-                // 休憩開始記録がない場合のエラーメッセージ
-                //return redirect()->back()->with('error', '休憩開始記録が見つかりません。');
             }
-            // 勤務記録がない場合のエラーメッセージ
-            //return redirect()->back()->with('error', '現在の状態では休憩を終了できません。');
         }
 
         // 勤怠データを再取得して状態を判定

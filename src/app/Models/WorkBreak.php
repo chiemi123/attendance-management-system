@@ -18,5 +18,4 @@ class WorkBreak extends Model
     {
         return $this->belongsTo(Attendance::class);
     }
-
 }

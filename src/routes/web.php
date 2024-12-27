@@ -29,35 +29,37 @@ Route::get('/test-mail', function () {
     return 'Test email sent!';
 });
 
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware(['auth'])->name('verification.notice');
+//Route::get('/email/verify', function () {
+//    return view('auth.verify-email');
+//})->middleware(['auth'])->name('verification.notice');
 
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    // 追加のログ記録
-    Log::info('Email Verification Attempt', [
-        'user_id' => $request->user()->id,
-        'email' => $request->user()->email,
-        'ip_address' => request()->ip()
-    ]);
+//Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+// 追加のログ記録
+//    Log::info('Email Verification Attempt', [
+//       'user_id' => $request->user()->id,
+//       'email' => $request->user()->email,
+//       'ip_address' => request()->ip()
+//   ]);
 
-    $request->fulfill();
-    return redirect('/')->with('success', 'メールアドレスが認証されました'); // 認証成功後にホーム画面にリダイレクト
-})->middleware(['auth', 'signed', 'throttle:6,1'])->name('verification.verify');
+//  $request->fulfill();
+//  return redirect('/')->with('success', 'メールアドレスが認証されました'); // 認証成功後にホーム画面にリダイレクト
+//})->middleware(['auth', 'signed', 'throttle:6,1'])->name('verification.verify');
 
-Route::middleware(['auth', 'verified'])->group(function () {
+//Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/', [AttendanceController::class, 'index'])->name('index');
     Route::post('/work', [AttendanceController::class, 'work'])->name('work');
     Route::get('/attendance', [AttendanceController::class, 'attendance'])->name('attendance');
 });
 
-Route::post('/email/resend', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
-    return back()->with('message', 'Verification link sent!');
-})->middleware(['auth', 'throttle:6,1']) // 1時間に6回の再送信制限を追加])
-    ->name('verification.resend');
+//Route::post('/email/resend', function (Request $request) {
+//    $request->user()->sendEmailVerificationNotification();
+//    return back()->with('message', 'Verification link sent!');
+//})->middleware(['auth', 'throttle:6,1']) // 1時間に6回の再送信制限を追加])
+//    ->name('verification.resend');
 
-Route::middleware(['auth', 'verified'])->group(function () {
+//Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     // ユーザー一覧ページへのルート
     Route::get('/users', [UserController::class, 'index'])->name('user.index');
 
